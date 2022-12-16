@@ -5,6 +5,7 @@
 
 header {
   /* background-color: black; */
+  position: relative;
   color: black;
   display: flex !important;
   width: 100%;

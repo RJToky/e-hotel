@@ -42,23 +42,17 @@ create table Photo (
 );
 create sequence seqPhoto;
 
-create table Disponibilite (
-    idDispo int PRIMARY KEY,
-    idHabitation int,
-    dateDebut date,
-    dateFin date,
-    FOREIGN KEY (idHabitation) REFERENCES Habitation(idHabitation)
-);
-create sequence seqDisponibilite;
-
 create table Reservation (
     idReservation int PRIMARY KEY,
     idClient int,
+    idHabitation int,
     dateDebut date,
     dateFin date,
-    FOREIGN KEY (idClient) REFERENCES Client(idClient)
+    FOREIGN KEY (idClient) REFERENCES Client(idClient),
+    FOREIGN KEY (idHabitation) REFERENCES Habitation(idHabitation)
 );
 create sequence seqReservation;
+
 
 insert into Client values(nextVal('seqClient'), 'Judi', 'judi', 'judi@gmail.com', '0342421145');
 insert into Client values(nextVal('seqClient'), 'Miharitiana', 'miharitiana', 'miha@gmail.com', '0345088066');
@@ -89,8 +83,3 @@ insert into Photo values(nextVal('seqPhoto'), 7, 'house7.jpg');
 insert into Photo values(nextVal('seqPhoto'), 8, 'house8.jpg');
 insert into Photo values(nextVal('seqPhoto'), 9, 'house9.jpg');
 insert into Photo values(nextVal('seqPhoto'), 10, 'house10.jpg');
-
-insert into Disponibilite values(nextVal('seqDisponibilite'), 1, '2022-02-12', '2022-02-28');
-insert into Disponibilite values(nextVal('seqDisponibilite'), 2, '2021-11-12', '2021-12-12');
-insert into Disponibilite values(nextVal('seqDisponibilite'), 3, '2022-09-12', '2022-09-30');
-insert into Disponibilite values(nextVal('seqDisponibilite'), 4, '2022-04-12', '2022-04-22');

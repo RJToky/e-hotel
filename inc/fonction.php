@@ -47,6 +47,7 @@
         $sql = sprintf($sql, $nom, $mdp, $email, $numTel);
 
         $con->exec($sql);
+        checkLogin($con, $email, $mdp);
     }
 
     function getAllHabitation($con) {
@@ -165,9 +166,9 @@
         return $tab;
     }
 
-    function reserver($con, $idClient, $date_depart, $date_arrive) {
-        $sql = "INSERT INTO Reservation VALUES (nextVal('seqReservation'), %s, '%s', '%s')";
-        $sql = sprintf($sql, $idClient, $date_depart, $date_arrive);
+    function reserver($con, $idClient, $idHabitation, $date_depart, $date_arrive) {
+        $sql = "INSERT INTO Reservation VALUES (nextVal('seqReservation'), %s, %s, '%s', '%s')";
+        $sql = sprintf($sql, $idClient, $idHabitation, $date_depart, $date_arrive);
 
         $con->exec($sql);
     }
@@ -234,5 +235,40 @@
         }
 
         return $ret;
+    }
+
+    function selectReservation($con, $idHabitation) {
+        $sql = "SELECT * FROM Reservation WHERE idHabitation = %s";
+        $sql = sprintf($sql, $idHabitation);
+        $res = $con->query($sql);
+
+        $res->setFetchMode(PDO::FETCH_OBJ);
+
+        $i = 0;
+        $tab = array();
+        while($line = $res->fetch()) {
+            $tab[$i]['idreservation'] = $line->idreservation;
+            $tab[$i]['idclient'] = $line->idclient;
+            $tab[$i]['idhabitation'] = $line->idhabitation;
+            $tab[$i]['datedebut'] = $line->datedebut;
+            $tab[$i]['datefin'] = $line->datefin;
+            $i++;
+        }
+
+        return $tab;
+    }
+
+    function isDisponible($con, $idHabitation, $arriver, $depart) {
+        $reservation = selectReservation($con, $idHabitation);
+
+        foreach ($reservation as $element) {
+            if (
+                $element['datedebut'] <= $arriver && $arriver <= $element['datefin'] ||
+                $element['datedebut'] <= $depart && $depart <= $element['datefin']
+                ) {
+                return false;
+            }
+        }
+        return true;
     }
 ?>

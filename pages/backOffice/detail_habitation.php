@@ -50,6 +50,25 @@
       </h3>
     </header>
 
+    <div class="form">
+      <form action="../../inc/traitement_update.php" method="post">
+        <select name="types" required>
+            <option value="">Type</option>
+            <option value="Maison" selected="<?php if($oneHabitation['quartier'] == "Maison") echo("selected"); ?>">Maison</option>
+            <option value="Studio" selected="<?php if($oneHabitation['quartier'] == "Studio") echo("selected"); ?>">Studio</option>
+        </select>
+        <input type="number" name="nbChambre" placeholder="Nombre de chambres" value="<?php echo($oneHabitation['nbChambre']); ?>" required>
+        <input type="text" name="loyer" placeholder="Loyer par jour" value="<?php echo($oneHabitation['loyer']); ?>" required>
+        <input type="text" name="quartier" placeholder="Quartier" value="<?php echo($oneHabitation['quartier']); ?>" required>
+        <input type="text" name="desc" placeholder="Courte description" value="<?php echo($oneHabitation['descHabitation']); ?>" required>
+        <div class="btnSubmit">
+          <input type="submit" name="set" value="Edit">
+        </div>
+        <input type="hidden" name="idHabitation" value="<?php echo($idHabitation); ?>">
+      </form>
+    </div>
+    <div class="clone-body"></div>
+
     <form action="../../inc/traitement_update.php" method="post">
       <div class="hotel_name"><?php echo($oneHabitation['quartier']); ?></div>
       <div class="hotel_pics">
@@ -108,4 +127,5 @@
       </div>
     </footer>
   </body>
+  <script src="../../assets/js/script2.js"></script>
 </html>

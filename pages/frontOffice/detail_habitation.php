@@ -73,6 +73,7 @@
           </div>
           <div class="button_date_sejour">
             <input type="submit" name="valider_date" value="Valider" />
+            <input type="hidden" name="idHabitation" value="<?php echo($idHabitation); ?>">
           </div>
         </div>
       </div>
