@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Saber";
+  src: url("../font/Saber.ttf");
+}
+
+header {
+  /* background-color: black; */
+  color: black;
+  display: flex !important;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+  height: 80px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.logo {
+  font-family: "Saber";
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  font-size: 30px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 45px;
+  border-radius: 20px;
+  box-shadow: 1px 2px 5px 1px #00000030;
+  padding: 1% 0% 1% 2%;
+}
+
+.search-bar span {
+  color: #8b8b8b;
+  font-size: 20px;
+}
+
+.search-text {
+  color: black;
+  width: 90%;
+  height: 20px;
+  border: none;
+  outline: none;
+  padding-left: 2.5%;
+  font-size: 18px;
+}
+
+.search-logo {
+  background-color: transparent;
+  border: none;
+}
+
+.username {
+  font-weight: bold;
+  color: #666565;
+  font-size: 22px;
+}

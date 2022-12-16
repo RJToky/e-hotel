@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="./inc/traitement_login.php" method="post">
+        <div class="login">Log in</div>
+        <hr />
+        <div class="username">
+          <input type="email" name="email" placeholder="e-mail" required />
+        </div>
+        <div class="password">
+          <input type="password" name="mdp" placeholder="password" required />
+        </div>
+        <div class="link_to_signUp">
+          <a href="./pages/inscription.html"> Créer un compte... </a>
+        </div>
+        <div class="button">
+          <input type="submit" name="login" value="Log in" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

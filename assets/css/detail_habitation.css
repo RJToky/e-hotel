@@ -1,0 +1,94 @@
+/* body */
+
+body > form {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.hotel_name {
+  font-size: 30px;
+  margin-left: 5%;
+  font-weight: bold;
+  color: #2e2e2e;
+}
+
+.hotel_pics {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partie_ambany {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 4%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.desc {
+  width: 66%;
+  font-size: 19px;
+}
+
+hr {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.date_sejour {
+  background-color: #f8f8ff8a;
+  width: 30%;
+  border-radius: 15px;
+  box-shadow: 1px 2px 15px 1px #00000030;
+  padding-top: 20px;
+}
+
+.price {
+  font-size: 27px;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.choix_date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+  font-size: 25px;
+  margin-top: 2%;
+}
+
+.choix_date input {
+  width: 100%;
+  height: 33px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3f5;
+  outline: none;
+}
+
+.button_date_sejour {
+  background-color: rgb(15, 123, 255);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.button_date_sejour input {
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+}

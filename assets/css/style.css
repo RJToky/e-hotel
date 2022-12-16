@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Poppins L";
+  src: url("../font/Poppins-Light.ttf");
+}
+
+body {
+  font-family: "Poppins L";
+}
