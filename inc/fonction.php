@@ -147,6 +147,21 @@
         return $tab;
     }
 
+    function getNomAdmin($con, $idAdmin) {
+        $sql = "SELECT * FROM Admin WHERE idAdmin = %s";
+        $sql = sprintf($sql, $idAdmin);
+        $res = $con->query($sql);
+
+        $res->setFetchMode(PDO::FETCH_OBJ);
+
+        $tab = array();
+        while($line = $res->fetch()) {
+            $tab = $line->nom;
+        }
+
+        return $tab;
+    }
+
     function reserver($con, $idClient, $date_depart, $date_arrive) {
         $sql = "INSERT INTO Reservation VALUES (nextVal('seqReservation'), %s, '%s', '%s')";
         $sql = sprintf($sql, $idClient, $date_depart, $date_arrive);

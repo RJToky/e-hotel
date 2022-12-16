@@ -76,10 +76,27 @@ h4 {
   bottom: 50px;
   right: 50px;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.add span {
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  background-color: rgb(255, 70, 70);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  bottom: 125px;
+  right: 50px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.add span,
+.stat span {
   color: white;
   font-size: 20px;
 }
@@ -94,10 +111,10 @@ h4 {
 .form {
   position: fixed;
   display: none;
-  padding: 30px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
-  box-shadow: 0 2px 20px rgba(131, 131, 131, 0.393);
 }
 
 .clone-body.active {
@@ -108,11 +125,10 @@ h4 {
 .form.active {
   display: flex;
   z-index: 2;
-  justify-content: center;
-  align-items: center;
 }
 
 .form > form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -120,6 +136,7 @@ h4 {
   border-radius: 15px;
   padding-top: 3%;
   width: 35%;
+  box-shadow: 0 2px 20px rgb(0 0 0 / 60%);
 }
 
 .form > form > input {
@@ -145,7 +162,7 @@ h4 {
   border-bottom-right-radius: 15px;
 }
 
-.form > form input[type='submit'] {
+.form > form input[type="submit"] {
   border-radius: 20px;
   height: 40px;
   background-color: transparent;
@@ -155,11 +172,11 @@ h4 {
   text-align: center;
 }
 
-.form > form input[type='file']::-webkit-file-upload-button {
+.form > form input[type="file"]::-webkit-file-upload-button {
   display: none;
 }
 
-.form > form input[type='file'] {
+.form > form input[type="file"] {
   padding-top: 10px;
   outline: none;
 }
@@ -167,4 +184,53 @@ h4 {
 .add.active {
   z-index: 3;
   transform: rotateZ(135deg);
+}
+
+.stat.active {
+  z-index: 3;
+}
+
+.container-stat {
+  position: fixed;
+  display: none;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container-stat > .content {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+  height: 85vh;
+  transition-duration: 0.5;
+  transition-delay: 1s;
+  box-shadow: 0 2px 20px rgb(0 0 0 / 60%);
+  animation: anim1 0.5s ease-out;
+}
+
+@keyframes anim1 {
+  from {
+    height: 0vh;
+  }
+  to {
+    height: 85vh;
+  }
+}
+
+.container-stat.active {
+  display: flex;
+  z-index: 2;
+}
+
+.container-stat > .content > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 600px;
 }

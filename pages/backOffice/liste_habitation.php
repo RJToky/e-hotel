@@ -51,6 +51,21 @@
       </form>
     </div>
     <div class="clone-body"></div>
+    <div class="stat">
+      <span>
+        <i class="fas fa-chart-line"></i>
+      </span>
+    </div>
+    <div class="container-stat">
+      <div class="content">
+        <div>
+          <canvas id="stat1"></canvas>
+        </div>
+        <div>
+          <canvas id="stat2"></canvas>
+        </div>
+      </div>
+    </div>
     <header>
       <div class="logo">E-HOTEL</div>
       <form action="./liste_habitation.php" method="get">
@@ -69,7 +84,7 @@
         </div>
       </form>
 
-      <h3 class="username">Admin : <?php echo(getNomClient($con, $_SESSION['idAdmin'])); ?></h3>
+      <h3 class="username">Admin : <?php echo(getNomAdmin($con, $_SESSION['idAdmin'])); ?></h3>
     </header>
     <main>
       <div class="container">
@@ -99,5 +114,6 @@
     </main>
     <footer></footer>
   </body>
+  <script src="../../assets/js/chart.umd.js"></script>
   <script src="../../assets/js/script.js"></script>
 </html>
