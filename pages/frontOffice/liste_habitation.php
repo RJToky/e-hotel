@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../../assets/css/_header.css">
     <link rel="stylesheet" href="../../assets/boot/bootstrap.css" />
     <link rel="stylesheet" href="../../assets/fontawesome-5/css/all.css">
+    <link rel="stylesheet" href="../../assets/css/_footer.css">
     <title>Listes</title>
   </head>
   <body>
@@ -76,6 +77,38 @@
 
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="ambony">
+          <div class="about">
+              <p>About</p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eveniet fuga quibusdam minima? Quaerat beatae fugiat nemo, voluptas facere, quia, eaque nihil adipisci tempore totam nesciunt natus quae? Expedita, sint.
+          </div>
+          <div class="categorie">
+              <p>Categorie</p>
+              PHP <br>
+              Web Design <br>
+              JS <br>
+              HTML <br>
+              CSS 
+          </div>
+          <div class="quickLink">
+              <p>Quick Link</p>
+              <a href=""> About us </a> <br>
+              <a href=""> Contact us </a><br>
+              <a href=""> Contribute </a><br>
+              <a href=""> Privacy Policy </a><br>
+              <a href=""> Sitemap </a>
+          </div>
+      </div>
+      <hr>
+      <div class="ambany">
+          <div class="ambany_gauche">
+              Copyright () 2022 All Rights Reserved by e-Hotel
+          </div>
+          <div class="ambany_droite">
+              Logo kely
+          </div>
+      </div>
+  </footer>
   </body>
 </html>

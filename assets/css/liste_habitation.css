@@ -139,7 +139,8 @@ h4 {
   box-shadow: 0 2px 20px rgb(0 0 0 / 60%);
 }
 
-.form > form > input {
+.form > form > input,
+.form > form > select {
   outline: none;
   height: 40px;
   border-radius: 20px;
@@ -147,6 +148,7 @@ h4 {
   font-size: 12px;
   border: 1px solid rgb(182, 182, 182);
   padding-left: 10px;
+  padding-right: 10px;
   margin: auto;
 }
 

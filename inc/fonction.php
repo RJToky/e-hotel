@@ -90,9 +90,12 @@
     }
 
     function deleteHabitation($con, $idHabitation) {
+        $sql = "DELETE FROM Photo WHERE idHabitation = %s";
+        $sql = sprintf($sql, $idHabitation);
+        $con->exec($sql);
+
         $sql = "DELETE FROM Habitation WHERE idHabitation = %s";
         $sql = sprintf($sql, $idHabitation);
-
         $con->exec($sql);
     }
 
@@ -123,7 +126,7 @@
 
         $res->setFetchMode(PDO::FETCH_OBJ);
 
-        $tab = array();
+        $tab = null;
         while($line = $res->fetch()) {
             $tab = $line->nomphoto;
             break;
@@ -189,5 +192,36 @@
         }
 
         return $tab;
+    }
+
+    function getIdType($con, $value) {
+        $sql = "SELECT * FROM Type WHERE value = '%s'";
+        $sql = sprintf($sql, $value);
+        $res = $con->query($sql);
+
+        $res->setFetchMode(PDO::FETCH_OBJ);
+
+        $tab = null;
+        while($line = $res->fetch()) {
+            $tab = $line->idtype;
+            break;
+        }
+
+        return $tab;
+    }
+
+    function uploadImage($file) {
+        $dossier = '../assets/img/';
+        $fichier = basename($file['name']);
+
+        $fichier = strtr($fichier,
+        'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+        'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+
+        if(move_uploaded_file($file['tmp_name'], $dossier . $fichier)) {
+            return $fichier;
+        }
+        return null;
     }
 ?>
