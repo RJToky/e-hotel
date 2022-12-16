@@ -212,16 +212,27 @@
 
     function uploadImage($file) {
         $dossier = '../assets/img/';
-        $fichier = basename($file['name']);
 
-        $fichier = strtr($fichier,
-        'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
-        'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+        $newNamer = randomName().".jpg";
 
-        if(move_uploaded_file($file['tmp_name'], $dossier . $fichier)) {
-            return $fichier;
+        if(move_uploaded_file($file['tmp_name'], $dossier . $newNamer)) {
+            return $newNamer;
         }
-        return null;
+        return "non";
+    }
+
+    function randomName() {
+        $lettreMaj = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        $lettreMin = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        
+        $ret = "";
+        $i = 0;
+        while($i < 5) {
+            $ret = $ret.$lettreMaj[rand(0, 25)];
+            $ret = $ret.$lettreMin[rand(0, 25)];
+            $i++;
+        }
+
+        return $ret;
     }
 ?>

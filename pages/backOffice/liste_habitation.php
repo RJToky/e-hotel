@@ -37,20 +37,20 @@
       </span>
     </div>
     <div class="form">
-      <form method="post" enctype="multipart/form-data" id="myForm">
+      <form action="../../inc/traitement_ajout_habit.php" method="post" enctype="multipart/form-data">
         <select name="types" required>
-          <option value="">Type</option>
-          <option value="Maison">Maison</option>
-          <option value="Studio">Studio</option>
-        </select>
-        <input type="number" name="nbChambre" placeholder="Nombre de chambres" required>
-        <input type="text" name="loyer" placeholder="Loyer par jour" required>
-        <input type="text" name="quartier" placeholder="Quartier" required>
-        <input type="text" name="desc" placeholder="Courte description" required>
-        <input type="file" name="photo" placeholder="Photo de l'habitation" required>
-        <div class="btnSubmit">
-          <input type="submit" value="Ajouter">
-        </div>
+            <option value="">Type</option>
+            <option value="Maison">Maison</option>
+            <option value="Studio">Studio</option>
+          </select>
+          <input type="number" name="nbChambre" placeholder="Nombre de chambres" required>
+          <input type="text" name="loyer" placeholder="Loyer par jour" required>
+          <input type="text" name="quartier" placeholder="Quartier" required>
+          <input type="text" name="desc" placeholder="Courte description" required>
+          <input type="file" name="photo" placeholder="Photo de l'habitation" required>
+          <div class="btnSubmit">
+            <input type="submit" value="Ajouter">
+          </div>
       </form>
     </div>
     <div class="clone-body"></div>
@@ -151,5 +151,4 @@
   </body>
   <script src="../../assets/js/chart.umd.js"></script>
   <script src="../../assets/js/script.js"></script>
-  <script src="../../assets/js/traitement_ajout.js"></script>
 </html>
