@@ -56,6 +56,7 @@
         $res->setFetchMode(PDO::FETCH_OBJ);
 
         $i = 0;
+        $tab = array();
         while($line = $res->fetch()) {
             $tab[$i]['idHabitation'] = $line->idhabitation;
             $tab[$i]['idType'] = $line->idtype;
@@ -102,6 +103,7 @@
 
         $res->setFetchMode(PDO::FETCH_OBJ);
 
+        $tab = array();
         while($line = $res->fetch()) {
             $tab['idHabitation'] = $line->idhabitation;
             $tab['idType'] = $line->idtype;
@@ -121,6 +123,7 @@
 
         $res->setFetchMode(PDO::FETCH_OBJ);
 
+        $tab = array();
         while($line = $res->fetch()) {
             $tab = $line->nomphoto;
             break;
@@ -136,6 +139,7 @@
 
         $res->setFetchMode(PDO::FETCH_OBJ);
 
+        $tab = array();
         while($line = $res->fetch()) {
             $tab = $line->nom;
         }
@@ -148,5 +152,27 @@
         $sql = sprintf($sql, $idClient, $date_depart, $date_arrive);
 
         $con->exec($sql);
+    }
+
+    function searchQuery($con, $query) {
+        $sql = "SELECT * FROM Habitation WHERE descHabitation LIKE '%s%s%s'";
+        $sql = sprintf($sql, "%", $query, "%");
+        $res = $con->query($sql);
+
+        $res->setFetchMode(PDO::FETCH_OBJ);
+
+        $i = 0;
+        $tab = array();
+        while($line = $res->fetch()) {
+            $tab[$i]['idHabitation'] = $line->idhabitation;
+            $tab[$i]['idType'] = $line->idtype;
+            $tab[$i]['nbChambre'] = $line->nbchambre;
+            $tab[$i]['loyer'] = $line->loyer;
+            $tab[$i]['quartier'] = $line->quartier;
+            $tab[$i]['descHabitation'] = $line->deschabitation;
+            $i++;
+        }
+
+        return $tab;
     }
 ?>

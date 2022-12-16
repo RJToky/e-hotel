@@ -7,6 +7,7 @@
   include("../../inc/fonction.php");
 
   $con = getConnection();
+
   $idHabitation = $_GET['idHabitation'];
   $oneHabitation = getOneHabitation($con, $idHabitation);
 ?>
@@ -25,12 +26,12 @@
   <body>
     <header>
       <div class="logo">E-HOTEL</div>
-      <form action="" method="get">
+      <form action="./liste_habitation.php" method="get">
         <div class="search-bar">
           <input
             class="search-text"
             type="text"
-            name="search"
+            name="query"
             placeholder="Search about travel"
           />
           <button class="search-logo">
