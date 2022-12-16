@@ -61,11 +61,36 @@
     </div>
     <div class="container-stat">
       <div class="content">
-        <div>
-          <canvas id="stat1"></canvas>
-        </div>
-        <div>
-          <canvas id="stat2"></canvas>
+        <form action="#" method="get">
+          <select name="mois" required>
+            <option value="">Mois</option>
+            <option value="1">Janvier</option>
+            <option value="2">Frevrier</option>
+            <option value="3">Mars</option>
+            <option value="4">Avril</option>
+            <option value="5">Main</option>
+            <option value="6">Juin</option>
+            <option value="7">Juillet</option>
+            <option value="8">Aout</option>
+            <option value="9">Septembre</option>
+            <option value="10">Octobre</option>
+            <option value="11">Novembre</option>
+            <option value="12">Decembre</option>
+          </select>
+          <select name="annee" required>
+            <option value="">Annee</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+        </form>
+        <div class="stats">
+          <div>
+            <canvas id="stat1"></canvas>
+          </div>
+          <div>
+            <canvas id="stat2"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -91,6 +116,14 @@
     </header>
     <main>
       <div class="container">
+
+      <div class="head">
+        <div class="rechercheMulti">
+          <a href="recherche_habitation.php"> Plus de recherches ? </a>
+        </div>
+        <div class="btn_logOut"><a href="../../inc/traitement_logOut.php">Log out</a></div>
+      </div>
+      
 
       <?php for($i = 0; $i < count($listHabitation); $i++) { ?>
 

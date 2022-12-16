@@ -223,8 +223,8 @@
     }
 
     function randomName() {
-        $lettreMaj = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        $lettreMin = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        $lettreMaj = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+        $lettreMin = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
         
         $ret = "";
         $i = 0;
@@ -264,11 +264,34 @@
         foreach ($reservation as $element) {
             if (
                 $element['datedebut'] <= $arriver && $arriver <= $element['datefin'] ||
-                $element['datedebut'] <= $depart && $depart <= $element['datefin']
+                $element['datedebut'] <= $depart && $depart <= $element['datefin'] ||
+                $arriver < $element['datedebut'] && $element['datefin'] < $depart
                 ) {
                 return false;
             }
         }
         return true;
+    }
+
+    function searchMutli($con,$string, $montant1 ,$montant2, $date1 ,$date2) {
+        $habit = array();
+        $req = ("SELECT * FROM habitation where descriptionh like '%s%s%s' and loyer>%s and loyer<%s %%s%");
+        $req = sprintf($req, $string, $montant1, $montant2);
+        $result = $con->query($req);
+        $result->setFetchMode(PDO::FETCH_OBJ);
+        $i = 0;
+        while ($ligne = $result->fetch()) {
+            $id = $ligne->idhabitation;
+           if (isDisponible($con,$id,$date1,$date2)){
+                $habit[$i]['idhabitation']= $id;
+                $habit[$i]['idtypeh']= $ligne->idtypeh;
+                $habit[$i]['nbrchambre']= $ligne->nbrchambre;
+                $habit[$i]['loyer']= $ligne->loyer;
+                $habit[$i]['idquartier']= $ligne->idquartier;
+                $i++;
+           }
+        }
+        $result->closeCursor();
+        return $habit;
     }
 ?>

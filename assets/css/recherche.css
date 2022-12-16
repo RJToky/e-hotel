@@ -1,7 +1,66 @@
 /************container*************/
+.desc input,
+.montant input,
+.date input {
+  display: flex;
+  align-items: center;
+  /* width: 500px; */
+  height: 45px;
+  border-radius: 20px;
+  box-shadow: 1px 2px 5px 1px #00000030;
+  padding: 1% 0% 1% 2%;
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+
+.button_valider input {
+  background-color: rgb(15, 123, 255);
+  width: 100px;
+  border-radius: 15px;
+  color: white;
+  border-color: transparent;
+  box-shadow: 1px 2px 5px 3px #00000030;
+}
+
 .container {
   padding-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  width: 100%;
+  height: 600px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.container form {
+  display: flex;
+  gap: 42px;
+  align-items: center;
+  justify-content: center;
+}
+
+.desc input {
+  border-radius: 10px;
+}
+
+input {
+  outline: none;
+}
+
+.montant input,
+.date input {
+  margin-bottom: 4%;
+  border-radius: 10px;
+}
+
 .box {
   position: relative;
   width: 260px;
@@ -23,7 +82,7 @@
   filter: brightness(0.9);
 }
 
-.box > .content {
+.content {
   position: absolute;
   bottom: 20px;
   left: 10%;
@@ -39,7 +98,6 @@
   box-sizing: border-box;
   border-radius: 15px;
 }
-
 .box:hover .imgbx img {
   filter: brightness(0.5);
 }
@@ -196,45 +254,33 @@ h4 {
 .container-stat {
   position: fixed;
   display: none;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
 }
 
 .container-stat > .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  height: 85vh;
-  opacity: 1;
-  border-radius: 15px;
-  background-color: white;
-  transition-duration: 0.5;
-  transition-delay: 1s;
-  box-shadow: 0 2px 20px rgb(0 0 0 / 60%);
-  animation: anim1 0.5s ease-out;
-  justify-content: flex-end;
-}
-
-@keyframes anim1 {
-  from {
-    height: 0vh;
-    opacity: 0;
-  }
-  to {
-    height: 85vh;
-    opacity: 1;
-  }
-}
-
-.container-stat .stats {
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 20px;
+  background-color: white;
+  border-radius: 15px;
+  height: 85vh;
+  transition-duration: 0.5;
+  transition-delay: 1s;
+  box-shadow: 0 2px 20px rgb(0 0 0 / 60%);
+  animation: anim1 0.5s ease-out;
+}
+
+@keyframes anim1 {
+  from {
+    height: 0vh;
+  }
+  to {
+    height: 85vh;
+  }
 }
 
 .container-stat.active {
@@ -242,26 +288,22 @@ h4 {
   z-index: 2;
 }
 
-.container-stat > .content > .stats > div {
+.container-stat > .content > div {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 500px;
-}
-
-.head {
-  display: flex;
-  justify-content: space-between;
-  padding: 0% 0% 2%;
+  width: 700px;
+  height: 600px;
 }
 
 .btn_logOut {
   position: relative;
+  width: 7.5%;
+  padding: 1%;
   background-color: transparent;
   border: 1px solid rgb(15, 123, 255);
+  margin-left: 105%;
   transition: background-color 0.5s;
-  padding: 8px 15px;
 }
 
 .btn_logOut a {
