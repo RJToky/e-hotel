@@ -9,11 +9,9 @@
   $con = getConnection();
 
   $tab = null;
-  if (isset($_GET['tab'])) 
-  {
+  if (isset($_GET['tab'])) {
     $tab = $_GET['tab'];
   }
-  
 
   if(isset($_GET['query'])) {
     $listHabitation = searchQuery($con, $_GET['query']);

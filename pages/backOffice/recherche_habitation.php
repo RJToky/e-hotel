@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if(!isset($_SESSION['idClient'])) {
+  if(!isset($_SESSION['idAdmin'])) {
     header('location:../../index.html');
   }
 
@@ -9,11 +9,9 @@
   $con = getConnection();
 
   $tab = null;
-  if (isset($_GET['tab'])) 
-  {
+  if (isset($_GET['tab'])) {
     $tab = $_GET['tab'];
   }
-  
 
   if(isset($_GET['query'])) {
     $listHabitation = searchQuery($con, $_GET['query']);
@@ -55,7 +53,7 @@
             </button>
         </div>
     </form>
-    <h3 class="username">Utilisateur : <?php echo(getNomClient($con, $_SESSION['idClient'])); ?></h3>
+    <h3 class="username">Utilisateur : <?php echo(getNomAdmin($con, $_SESSION['idAdmin'])); ?></h3>
     </header>
     <main>
       <div class="container">
