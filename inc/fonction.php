@@ -294,4 +294,3 @@
         $result->closeCursor();
         return $habit;
     }
-?>

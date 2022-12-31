@@ -1,108 +1,102 @@
-body
-{
-    font-size: 30px;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  font-size: 30px;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container
-{
-    width: 30%;
-    height: 375px;
-    background-color: ghostwhite;
-    padding-left: 1em;
-    border-radius: 12px;
+.container {
+  width: 30%;
+  height: 375px;
+  background-color: ghostwhite;
+  padding-left: 1em;
+  border-radius: 12px;
 }
 
-hr
-{
-    width: 92%;
-    margin-top: 4%;
-    margin-bottom: 7%;
+hr {
+  width: 92%;
+  margin-top: 4%;
+  margin-bottom: 7%;
 }
 
-.login , .signup
-{
-    margin-top: 3%;
-    font-size: 35px;
-    font-weight: bold;
-    font-family: monospace;
+.login,
+.signup {
+  margin-top: 3%;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: monospace;
 }
 
-.password input, .username input, .nom input, .numTel input
-{
-    width: 92%;
-    height: 50px;
-    padding-left: 1em;
-    font-size: 20px;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    border-radius: 7px;
+.password input,
+.username input,
+.nom input,
+.numTel input {
+  width: 92%;
+  height: 50px;
+  padding-left: 1em;
+  font-size: 20px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 7px;
 }
 
-.password input, .nom input, .numTel input
-{
-    margin-top: 3%;
+.password input,
+.nom input,
+.numTel input {
+  margin-top: 3%;
 }
 
-.link_to_signUp
-{
-    margin-top: 2%;
-    margin-bottom: 4%;
+.link_to_signUp {
+  margin-top: 2%;
+  margin-bottom: 4%;
 }
 
-.link_to_signUp a
-{
-    text-decoration: none;
-    font-size: 18px;
+.link_to_signUp a {
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.button
-{
-    margin-left: -30px;
-    width: 106.5%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(15, 123, 255);
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+.button {
+  margin-left: -30px;
+  width: 106.5%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 123, 255);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
-.button input
-{
-    font-size: 35px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
+.button input {
+  font-size: 35px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* inscription */
 
-.button_signup
-{
-    margin-top: 7%;
-    margin-left: -30px;
-    width: 106.5%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(15, 123, 255);
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+.button_signup {
+  margin-top: 7%;
+  margin-left: -30px;
+  width: 106.5%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 123, 255);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
-.button_signup input
-{
-    font-size: 35px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
+.button_signup input {
+  font-size: 35px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }

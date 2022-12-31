@@ -65,4 +65,3 @@ new Chart(chart2, {
     },
   },
 });
-

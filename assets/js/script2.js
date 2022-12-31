@@ -11,6 +11,6 @@ btnModifier.addEventListener("click", (e) => {
 });
 
 cloneBody.addEventListener("click", () => {
-    form.classList.toggle("active");
-    cloneBody.classList.toggle("active");
+  form.classList.toggle("active");
+  cloneBody.classList.toggle("active");
 });
